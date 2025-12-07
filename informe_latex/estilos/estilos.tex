@@ -1,0 +1,61 @@
+% ============================================
+% ARCHIVO DE ESTILOS PERSONALIZADO PARA EOLIA
+% ============================================
+
+% Colores personalizados
+\definecolor{colorPrincipal}{RGB}{41, 128, 185}      % Azul
+\definecolor{colorSecundario}{RGB}{52, 152, 219}     % Azul claro
+\definecolor{colorAcento}{RGB}{230, 126, 34}         % Naranja
+\definecolor{colorTítulo}{RGB}{44, 62, 80}           % Gris oscuro
+\definecolor{colorTexto}{RGB}{52, 73, 94}            % Gris azulado
+
+% Configuración de títulos
+\titleformat{\section}
+    {\Large\bfseries\color{colorPrincipal}}
+    {\thesection}{1em}{}
+    [\titlerule]
+
+\titleformat{\subsection}
+    {\large\bfseries\color{colorSecundario}}
+    {\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+    {\bfseries\color{colorTítulo}}
+    {\thesubsubsection}{1em}{}
+
+% Espaciado entre títulos
+\titlespacing*{\section}{0pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.5ex plus .2ex}
+
+% Configuración de fuente
+\renewcommand{\familydefault}{\sfdefault}
+
+% Configuración de párrafos
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% Comandos personalizados
+\newcommand{\destacado}[1]{\textbf{\textcolor{colorAcento}{#1}}}
+\newcommand{\importante}[1]{\textbf{\textcolor{colorPrincipal}{#1}}}
+\newcommand{\definicion}[2]{
+    \begin{tcolorbox}[colback=colorSecundario!10, colframe=colorPrincipal, title=#1, sharp corners=south]
+    #2
+    \end{tcolorbox}
+}
+
+% Configuración de código
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{colorPrincipal},
+    commentstyle=\color{gray},
+    stringstyle=\color{colorAcento},
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny,
+    showstringspaces=false
+}
+
+% Configuración de tablas
+\renewcommand{\arraystretch}{1.3}

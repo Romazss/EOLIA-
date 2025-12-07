@@ -1,0 +1,91 @@
+\documentclass[12pt, a4paper, spanish]{article}
+
+% Configuración de idioma
+\usepackage[spanish]{babel}
+\usepackage[utf-8]{inputenc}
+
+% Paquetes de estilos y formato
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Importar archivo de estilos personalizado
+\input{estilos/estilos.tex}
+
+% Configuración de encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{EOLIA - Informe}}
+\lhead{\nouppercase{\leftmark}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Configuración de enlaces
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={EOLIA - Informe Completo},
+    pdfauthor={EOLIA Team}
+}
+
+\begin{document}
+
+% ============================================
+% PORTADA
+% ============================================
+\input{secciones/01_portada.tex}
+
+% ============================================
+% TABLA DE CONTENIDOS
+% ============================================
+\newpage
+\tableofcontents
+\newpage
+
+% ============================================
+% LISTA DE FIGURAS Y TABLAS
+% ============================================
+\listoffigures
+\listoftables
+\newpage
+
+% ============================================
+% CAPÍTULOS PRINCIPALES
+% ============================================
+
+\input{capitulos/01_introduccion.tex}
+\input{capitulos/02_antecedentes.tex}
+\input{capitulos/03_propuesta_valor.tex}
+\input{capitulos/04_modelo_negocio.tex}
+\input{capitulos/05_investigacion_mercado.tex}
+\input{capitulos/06_plan_implementacion.tex}
+\input{capitulos/07_equipo.tex}
+\input{capitulos/08_conclusiones.tex}
+
+% ============================================
+% APÉNDICES
+% ============================================
+\appendix
+\input{secciones/anexo_a.tex}
+
+% ============================================
+% REFERENCIAS
+% ============================================
+\newpage
+\bibliographystyle{plain}
+\bibliography{referencias}
+
+\end{document}
